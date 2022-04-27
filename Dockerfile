@@ -1,6 +1,7 @@
-FROM python:3.7-alpine
+FROM python:3-alpine
 
 RUN apk add --no-cache --quiet \
+            bash \
             git \
             groff \
             jq \
@@ -10,3 +11,5 @@ RUN pip install --upgrade --no-cache-dir \
                 s3cmd \
                 cloudflare \
     && ln -s /usr/local/bin/cli4 /usr/local/bin/cloudflare
+
+ENTRYPOINT [ "/bin/bash" ]
