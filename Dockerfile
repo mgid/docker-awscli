@@ -2,6 +2,7 @@ FROM python:3-alpine
 
 RUN apk add --no-cache --quiet \
             bash \
+            curl \
             git \
             groff \
             jq \
